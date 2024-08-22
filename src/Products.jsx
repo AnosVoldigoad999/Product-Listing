@@ -134,7 +134,7 @@ setTotal(newTotal)
                     scale:1}}
                     transition={{
                         ease:"backInOut",
-                        duration:0.1
+                        duration:0.2
                     }}
                     viewport={{
                         once:true
