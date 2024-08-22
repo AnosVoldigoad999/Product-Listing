@@ -1,5 +1,6 @@
 import React from 'react'
 import PRODUCTS from './data.json'
+import {motion} from "framer-motion"
 function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProducts, setTotal}) {
     const handleOrder =()=>{//ordersssssssss
         setShowModal(false)//removes the modal
@@ -16,7 +17,19 @@ function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProdu
             handleOrder()
         }
     }}>
-        <div className="modalContent">
+        <motion.div
+        initial={{
+            rotate:"0deg",
+            scale:0
+        }}
+        animate={{
+            rotate:"360deg",
+            scale:1
+        }}
+        transition={{
+            duration:0.1
+        }}
+        className="modalContent">
             <img src="/assets/images/icon-order-confirmed.svg" alt="confirmed" />
             <div className="top">
             <h1>Order Confirmed</h1>
@@ -47,7 +60,7 @@ function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProdu
             </div>
            </div>
             <button onClick={()=>{handleOrder()}}>Start New Order</button>
-        </div>
+        </motion.div>
     </div>
   </>
 }

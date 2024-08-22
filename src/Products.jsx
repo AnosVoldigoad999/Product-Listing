@@ -1,6 +1,16 @@
 import React, {useState, useEffect} from 'react'
-function Products({cart, setCart, total, setTotal, products, setProducts}) {
-   
+import {motion} from "framer-motion"
+function Products({cart, setCart, total, setTotal, products, setProducts, setShowCart}) {
+    const [screenSize, setScreenSize] = useState()
+   window.addEventListener("resize", ()=>{
+    if(window.innerWidth<=702){
+        setScreenSize("mobile")
+    }else if(window.innerWidth<=918 && window.innerWidth>702){
+        setScreenSize("tablet")
+    }else{
+        setScreenSize("desktop")
+    }
+   })
 
     useEffect(()=>{
         let newCart = cart.filter(cartItem=>{//new cart
@@ -112,12 +122,23 @@ setTotal(newTotal)
 
 
   return <>
-    <div className='productContainer'>
-        <h1>Desserts</h1>
-        <div className="grid">
+        <div className="grid" onClick={()=>{
+            setShowCart(false)
+        }}>
             {products.map((product, index)=>{
-                return <div key={index} className="product" >
-                    <img src={product.image.desktop} alt="productImg" className='productImg' />
+                return <motion.div
+                initial={{scale:0}}
+                whileInView={{
+                    scale:1}}
+                    transition={{
+                        ease:"backInOut",
+                        duration:0.1
+                    }}
+                    viewport={{
+                        once:true
+                    }}
+                key={index} className="product" >
+                    <img src={screenSize==="mobile"?product.image.mobile:screenSize==="tablet"?product.image.tablet:product.image.desktop} alt="productImg" className='productImg' style={{border:`${product.added ? "2px solid hsl(14, 86%, 42%)":""}`}}/>
                 {/*if product.added is false show the add to cart button, else show the incrementDecrement thing */}    {!product.added?<button onClick={()=>{handleCart(product);handleAdded(product)}}><img src='/assets/images/icon-add-to-cart.svg' />Add to cart</button>:<div className='incrementDecrement'>
                         <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" onClick={()=>{handleSubtract(product)}}/>{/*minus button */}
                         {product.numOfItem}
@@ -126,11 +147,9 @@ setTotal(newTotal)
                     <p className='category'>{product.category}</p>
                     <p className='name'>{product.name}</p>
                     <p className='price'>${(product.price).toString().includes(".") ? (product.price).toString()+"0":(product.price).toString()+".00"}</p>{/*if the product price converted to a string has a dot, add a zero to it, if not add  a .00  to it....6.5 become 6.50 and 7 becomes 7.00*/}
-                </div>
+                </motion.div>
             })}
         </div>
-
-    </div>
   </>
 }
 

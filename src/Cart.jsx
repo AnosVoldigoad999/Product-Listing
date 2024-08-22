@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {motion} from "framer-motion"
 function Cart({cart, setCart, total, setTotal, products, setProducts, setShowModal}) {
     const handleDelete = (item)=>{ //delete
         //start
@@ -26,7 +26,25 @@ function Cart({cart, setCart, total, setTotal, products, setProducts, setShowMod
         //end
     }
   return <>
-    <div className='cart'>
+    <motion.div 
+     initial={{
+        scale:0
+       }}
+       animate={{
+        scale:1
+       }}
+       style={{
+        transformOrigin:"100% 0"
+       }}
+       transition={{
+        ease:"easeInOut",
+       duration:0.1
+       }}
+       exit={{
+        x:500
+       }}
+     
+    className='cart'>
         <h3>Your Cart ({cart.length})</h3>
         {cart.length===0 ? 
        <div style={{display:"flex",
@@ -65,7 +83,7 @@ function Cart({cart, setCart, total, setTotal, products, setProducts, setShowMod
             </div>
             <button onClick={()=>{setShowModal(true)}}>Confirm Order</button> {/*show modaaaaaalllll */}
         </div>}
-    </div>
+    </motion.div>
   </>
 }
 
