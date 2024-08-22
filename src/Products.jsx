@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {motion} from "framer-motion"
+import { GoPlus } from "react-icons/go";
+import { LuMinus } from "react-icons/lu";
 function Products({cart, setCart, total, setTotal, products, setProducts, setShowCart}) {
     const [screenSize, setScreenSize] = useState()
    window.addEventListener("resize", ()=>{
@@ -140,9 +142,11 @@ setTotal(newTotal)
                 key={index} className="product" >
                     <img src={screenSize==="mobile"?product.image.mobile:screenSize==="tablet"?product.image.tablet:product.image.desktop} alt="productImg" className='productImg' style={{border:`${product.added ? "2px solid hsl(14, 86%, 42%)":""}`}}/>
                 {/*if product.added is false show the add to cart button, else show the incrementDecrement thing */}    {!product.added?<button onClick={()=>{handleCart(product);handleAdded(product)}}><img src='/assets/images/icon-add-to-cart.svg' />Add to cart</button>:<div className='incrementDecrement'>
-                        <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" onClick={()=>{handleSubtract(product)}}/>{/*minus button */}
+                {/*<img src="/assets/images/icon-decrement-quantity.svg" alt="minus"/>
+                        <img src="/assets/images/icon-increment-quantity.svg" alt="plus"  />*/}
+                        <LuMinus className='icons'  onClick={()=>{handleSubtract(product)}}  />{/*minus button */}
                         {product.numOfItem}
-                        <img src="/assets/images/icon-increment-quantity.svg" alt="plus" onClick={()=>{handleAdd(product)}} />{/*plus button */}
+                        <GoPlus className='icons' onClick={()=>{handleAdd(product)}}  />{/*plus button */}
                         </div>}
                     <p className='category'>{product.category}</p>
                     <p className='name'>{product.name}</p>

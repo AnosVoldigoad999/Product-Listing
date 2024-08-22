@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 :root{
@@ -272,10 +272,10 @@ button img{
   color: var(--Rose50);
 }
 
-.incrementDecrement img{
+.incrementDecrement .icons{
   border: 1px solid var(--Rose50);
-  height: 15px;
-  width: 15px;
+  height: 21px;
+  width: 21px;
   padding: 2px;
   border-radius: 10px;
 }
@@ -384,10 +384,10 @@ button img{
   border: 1px solid var(--Red);
 }
 
-.incrementDecrement img{
+.incrementDecrement .icons:hover{
   cursor: pointer;
-  /*background-color: var(--Rose50);*/
-  filter: hue-rotate(90deg);
+  background-color: var(--Rose50);
+  color: var(--Red);
 }
 
 .item .section2 img:hover{
