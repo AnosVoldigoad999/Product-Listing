@@ -93,7 +93,7 @@ main{
 }
 
 button{
-  padding: 4% 7%;
+  padding: 12px 7%;
   border: 1px solid var(--Rose300);
   border-radius: 20px;
   display: flex;
@@ -305,7 +305,7 @@ button img{
   padding: 20px;
   border-radius: 10px;
   /*min-width: 399px;*/
-  /*max-width: 450px;*/
+  max-width: 450px;
   overflow: scroll;
 }
 
@@ -377,6 +377,7 @@ button img{
   color: var(--Rose50);
   border: none;
   margin-top: 30px;
+  
 }
 
 /*hover*/
@@ -440,11 +441,13 @@ button img{
   @media(max-width:1032px){
     .modalContent{
       width: 60%;
+      max-width: 100%;
     }
   }
   
-  @media(max-width:1032px){
+  @media(max-width:516px){
     .modalContent{
       width: 90%;
+      max-width: 100%;
     }
   }
