@@ -19,11 +19,11 @@ function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProdu
     }}>
         <motion.div
         initial={{
-            rotate:"0deg",
+          
             scale:0
         }}
         animate={{
-            rotate:"360deg",
+         
             scale:1
         }}
         transition={{
