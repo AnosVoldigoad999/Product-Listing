@@ -139,7 +139,7 @@ button img{
 .cartItems{
   /*border: 1px solid red;*/
   width: 100%;
-  overflow-y: scroll ;
+  overflow-y: auto;
   height: 60%;
   padding: 0 15px;
   margin-bottom: 10px;
@@ -309,7 +309,7 @@ button img{
   border-radius: 10px;
   /*min-width: 399px;*/
   max-width: 450px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .modalContent::-webkit-scrollbar{
@@ -358,7 +358,7 @@ button img{
   /*border: 1px solid red;*/
   font-size: 0.9rem;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .modalContent .item img{
