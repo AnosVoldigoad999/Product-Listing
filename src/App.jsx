@@ -29,7 +29,7 @@ const [showModal, setShowModal] = useState(false)
     <main>
       <Products cart={cart} setCart={setCart} total={total} setTotal={setTotal} products={products} setProducts={setProducts} setShowCart={setShowCart} />
      <AnimatePresence
-     mode="popLayout"
+    
      >
      {showCart && <Cart
      cart={cart} setCart={setCart} total={total} setTotal={setTotal} products={products} setProducts={setProducts} setShowModal={setShowModal}/>}

@@ -27,7 +27,8 @@ function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProdu
             scale:1
         }}
         transition={{
-            duration:0.1
+            duration:0.4,
+            ease:"backOut"
         }}
         className="modalContent">
             <img src="/assets/images/icon-order-confirmed.svg" alt="confirmed" />

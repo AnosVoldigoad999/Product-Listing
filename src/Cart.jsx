@@ -38,7 +38,7 @@ function Cart({cart, setCart, total, setTotal, products, setProducts, setShowMod
        }}
        transition={{
         ease:"easeInOut",
-       duration:0.1
+       duration:0.4
        }}
        exit={{
         x:500

@@ -129,12 +129,13 @@ setTotal(newTotal)
         }}>
             {products.map((product, index)=>{
                 return <motion.div
-                initial={{scale:0}}
+                initial={{opacity:0,y:100}}
                 whileInView={{
-                    scale:1}}
+                    opacity:1,
+                y:0}}
                     transition={{
-                        ease:"backInOut",
-                        duration:0.2
+                        ease:"easeInOut",
+                        duration:0.7
                     }}
                     viewport={{
                         once:true
