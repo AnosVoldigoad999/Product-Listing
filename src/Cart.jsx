@@ -28,17 +28,17 @@ function Cart({cart, setCart, total, setTotal, products, setProducts, setShowMod
   return <>
     <motion.div 
      initial={{
-        scale:0
+        x:500
        }}
        animate={{
-        scale:1
+        x:0
        }}
        style={{
         transformOrigin:"100% 0"
        }}
        transition={{
         ease:"easeInOut",
-       duration:0.4
+       duration:0.5
        }}
        exit={{
         x:500

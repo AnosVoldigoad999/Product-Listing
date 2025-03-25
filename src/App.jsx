@@ -28,12 +28,10 @@ const [showModal, setShowModal] = useState(false)
   </nav>
     <main>
       <Products cart={cart} setCart={setCart} total={total} setTotal={setTotal} products={products} setProducts={setProducts} setShowCart={setShowCart} />
-     <AnimatePresence
-    
-     >
-     {showCart && <Cart
+  <AnimatePresence>
+  {showCart && <Cart
      cart={cart} setCart={setCart} total={total} setTotal={setTotal} products={products} setProducts={setProducts} setShowModal={setShowModal}/>}
-     </AnimatePresence>
+  </AnimatePresence>
     </main>
     {showModal && <OrderConfirmed cart={cart} setCart={setCart} total={total} showModal={showModal} setShowModal={setShowModal} setProducts={setProducts} setTotal={setTotal} />}
   </>

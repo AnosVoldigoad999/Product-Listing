@@ -19,15 +19,14 @@ function OrderConfirmed({cart, setCart, total, showModal, setShowModal, setProdu
     }}>
         <motion.div
         initial={{
-          
-            scale:0
+            y:"100vh"
         }}
         animate={{
          
-            scale:1
+            y:0
         }}
         transition={{
-            duration:0.4,
+            duration:0.5,
             ease:"backOut"
         }}
         className="modalContent">
